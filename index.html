@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Git</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>Git的使用</h1>
+<h2>配置使用人的账号和邮箱</h2>
+<pre><code>git config --global user.name zhufengzhufeng
+git config --global user.email xxxxx
+git config --list 查看所有配置
+</code></pre>
+
+<p>mkdir 创建目录</p>
+<h2>初始化git</h2>
+<pre><code>git init
+</code></pre>
+
+<h2>初始化文件</h2>
+<pre><code>echo hello &gt; index.txt       覆盖写入
+echo hello word &gt;&gt; index.txt 写入
+cat index.txt  查看文本里的内容
+</code></pre>
+
+<blockquote>
+<p>一个大于号表示清空并写入 &gt;&gt; 表示 追加</p>
+</blockquote>
+<h2>删除文件rm</h2>
+<h2>查看状态  git status</h2>
+<h2>将文件加入到暂存区中</h2>
+<p><code>git add file
+git add ./git add -A</code></p>
+<h2>提交commit</h2>
+<p><code>git commit -m&quot;first&quot;</code></p>
+<h2>vi控制台</h2>
+<p>如果进入编辑模式可以i键进入插入模式</p>
+<ul>
+<li>i表示编辑</li>
+<li>退出esc + :wq</li>
+</ul>
+<h2>查看版本库信息</h2>
+<pre><code>git log --oneline 查看版本库信息
+git reflog   查看未来的版本
+</code></pre>
+
+<h2>比较代码差异</h2>
+<pre><code>git diff            比较工作区和暂存区的区别
+git diff master     比较工作区和版本库的区别
+git diff --cached   比较暂存区和版本库的区别
+</code></pre>
+
+<h2>从暂存区删除本次的add</h2>
+<p><code>git reset HEAD &lt;file&gt;</code></p>
+<blockquote>
+<p>取消本次的add</p>
+</blockquote>
+<h2>从缓存区 从历史区将代码覆盖掉工作区</h2>
+<p><code>git checkout &lt;file&gt;</code> </p>
+<h2>回到过去</h2>
+<p><code>git reset --hard commit_id/HEAD^^^^^^^/HEAD~6</code></p>
+<h2>分支</h2>
+<pre><code>查看所有分支git branch 
+创建分支git branch dev
+切换分支git checkout dev 
+创建并切换git checkout -b fixbug
+删除分支git branch -d dev
+合并分支git merge 分支名
+</code></pre>
+
+<blockquote>
+<p>在主干上拉取一条分支，在分支上进行开发，开发后，在主干上将代码进行合并，主干上目前没有人开发，可以使用快转的方式，将我们的指针直接指向到分支的最新装态 fast-forward</p>
+</blockquote>
+<h2>在github上部署静态页</h2>
+<p>需要将特定的内容推送到github上的gh-pages分支上</p>
+<ul>
+<li>创建一个gh-pages的分支
+<code>git checkout -b gh-pages</code></li>
+<li>将代码commit 到这个分支上
+<code>git add .
+git commit -m 'ok'</code></li>
+<li>连接远程仓库和本地仓库
+<code>git remote add aaa 地址</code></li>
+<li>将代码推送到远程仓库上
+<code>git push aaa gh-pages</code></li>
+</ul>
+<h2>合并分支产生冲突</h2>
+<pre><code>git log --graph --oneline --decorate 查看
+</code></pre>
+
+<h2>合并分支产生冲突</h2>
+<ul>
+<li>在主干的某个版本上进行分支开发，在分支上开发1.txt这个文件(drag)，在主干上也开发1.txt(limit),此时回到主干上合并时，会产生冲突，需要我们手动解决</li>
+</ul>
+<h2>从工作区中提交到历史区</h2>
+<p><code>git commit -a -m'drag'</code></p>
+<h2>解决冲突</h2>
+<p>去掉&gt;&gt;&gt;&gt;&gt;&gt; ========  &lt;&lt;&lt;&lt;&lt;&lt;&lt; 保留需要的内容再次提交</p>
+<h2>合并</h2>
+<p>git rebase 变基
+git cherry-pick 精选</p>
+<h2>显示结构</h2>
+<p><code>git log --graph --oneline --decorate</code></p>
+<h2>创建忽略文件</h2>
+<p>将项目提交到github上，需要在github上创建一个空的仓库</p>
+<h2>添加远程仓库的连接</h2>
+<p><code>git remote add 名字  地址</code></p>
+<h2>查看配置的所有配置的地址</h2>
+<p><code>git remote -v</code></p>
+<h2>删除地址</h2>
+<p><code>git remote rm 名字</code></p>
+<h2>upstream</h2>
+<p><code>-u 下次提交或者拉取代码可以直接git push 或者git pull</code></p>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
